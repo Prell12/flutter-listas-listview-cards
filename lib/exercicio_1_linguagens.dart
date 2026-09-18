@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const LinguagensApp());
+void main() {
+  runApp(const LinguagensApp());
+}
 
 class LinguagensApp extends StatelessWidget {
   const LinguagensApp({super.key});
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(useMaterial3: false),
-    home: const TelaLinguagens(),
-  );
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: false),
+      home: const TelaLinguagens(),
+    );
+  }
 }
 
 class TelaLinguagens extends StatelessWidget {
@@ -28,14 +32,18 @@ class TelaLinguagens extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Linguagens de programação')),
-    body: ListView.builder(
-      itemCount: linguagens.length,
-      itemBuilder: (context, index) => ListTile(
-        leading: const Icon(Icons.code),
-        title: Text(linguagens[index]),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Linguagens de programação')),
+      body: ListView.builder(
+        itemCount: linguagens.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: const Icon(Icons.code),
+            title: Text(linguagens[index]),
+          );
+        },
       ),
-    ),
-  );
+    );
+  }
 }
